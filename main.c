@@ -1,31 +1,24 @@
-
 #include <stdio.h>
 
 int main(void)
 {
-    int i;
-    int grade[5];
-    int *p = grade;
-    int sum = 0;
-    float avg;
+    char *pc;
+    int *pi;
+    double *pd;
 
-    // 배열에 점수 입력
-    for (i = 0; i < 5; i++)
-    {
-        printf("grade[%d] = ", i);
-        scanf("%d", p + i);
-    }
+    pc = (char *)10000;
+    pi = (int *)10000;
+    pd = (double *)10000;
 
-    // 포인터를 이용하여 합계 계산
-    for (i = 0; i < 5; i++)
-    {
-        sum += *(p + i);
-    }
+    printf("증가 전 : pc = %p, pi = %p, pd = %p\n",
+           (void *)pc, (void *)pi, (void *)pd);
 
-    // 평균 계산
-    avg = (float)sum / 5;
+    pc++;
+    pi++;
+    pd++;
 
-    printf("평균 = %.2f\n", avg);
+    printf("증가 후 : pc = %p, pi = %p, pd = %p\n",
+           (void *)pc, (void *)pi, (void *)pd);
 
     return 0;
 }
